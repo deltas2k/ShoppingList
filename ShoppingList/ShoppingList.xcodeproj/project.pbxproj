@@ -9,23 +9,31 @@
 /* Begin PBXBuildFile section */
 		3411C0A1233E5DD9004E546E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3411C0A0233E5DD9004E546E /* AppDelegate.swift */; };
 		3411C0A3233E5DD9004E546E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3411C0A2233E5DD9004E546E /* SceneDelegate.swift */; };
-		3411C0A5233E5DD9004E546E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3411C0A4233E5DD9004E546E /* ViewController.swift */; };
 		3411C0A8233E5DD9004E546E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3411C0A6233E5DD9004E546E /* Main.storyboard */; };
 		3411C0AB233E5DD9004E546E /* ShoppingList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3411C0A9233E5DD9004E546E /* ShoppingList.xcdatamodeld */; };
 		3411C0AD233E5DDA004E546E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3411C0AC233E5DDA004E546E /* Assets.xcassets */; };
 		3411C0B0233E5DDA004E546E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3411C0AE233E5DDA004E546E /* LaunchScreen.storyboard */; };
+		3411C0B9233E5F06004E546E /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3411C0B8233E5F06004E546E /* ShoppingTableViewCell.swift */; };
+		3411C0BB233E5F26004E546E /* ShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3411C0BA233E5F26004E546E /* ShoppingTableViewController.swift */; };
+		3411C0C0233E5F6D004E546E /* ShoppingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3411C0BF233E5F6D004E546E /* ShoppingController.swift */; };
+		3411C0C3233E5F9D004E546E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3411C0C2233E5F9D004E546E /* CoreDataStack.swift */; };
+		3411C0C5233E5FC4004E546E /* Shopping+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3411C0C4233E5FC4004E546E /* Shopping+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3411C09D233E5DD9004E546E /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3411C0A0233E5DD9004E546E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3411C0A2233E5DD9004E546E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3411C0A4233E5DD9004E546E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3411C0A7233E5DD9004E546E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3411C0AA233E5DD9004E546E /* ShoppingList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoppingList.xcdatamodel; sourceTree = "<group>"; };
 		3411C0AC233E5DDA004E546E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3411C0AF233E5DDA004E546E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3411C0B1233E5DDA004E546E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3411C0B8233E5F06004E546E /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
+		3411C0BA233E5F26004E546E /* ShoppingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewController.swift; sourceTree = "<group>"; };
+		3411C0BF233E5F6D004E546E /* ShoppingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingController.swift; sourceTree = "<group>"; };
+		3411C0C2233E5F9D004E546E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		3411C0C4233E5FC4004E546E /* Shopping+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shopping+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +66,11 @@
 		3411C09F233E5DD9004E546E /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				3411C0C7233E6001004E546E /* models */,
+				3411C0BD233E5F3C004E546E /* controllers */,
+				3411C0BC233E5F2F004E546E /* view */,
 				3411C0B7233E5DEE004E546E /* resources */,
-				3411C0A4233E5DD9004E546E /* ViewController.swift */,
-				3411C0A6233E5DD9004E546E /* Main.storyboard */,
-				3411C0A9233E5DD9004E546E /* ShoppingList.xcdatamodeld */,
+				3411C0C6233E5FD4004E546E /* storyboards */,
 			);
 			path = ShoppingList;
 			sourceTree = "<group>";
@@ -76,6 +85,57 @@
 				3411C0B1233E5DDA004E546E /* Info.plist */,
 			);
 			path = resources;
+			sourceTree = "<group>";
+		};
+		3411C0BC233E5F2F004E546E /* view */ = {
+			isa = PBXGroup;
+			children = (
+				3411C0B8233E5F06004E546E /* ShoppingTableViewCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		3411C0BD233E5F3C004E546E /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3411C0C1233E5F75004E546E /* model controllers */,
+				3411C0BE233E5F46004E546E /* view controllers */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		3411C0BE233E5F46004E546E /* view controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3411C0BA233E5F26004E546E /* ShoppingTableViewController.swift */,
+			);
+			path = "view controllers";
+			sourceTree = "<group>";
+		};
+		3411C0C1233E5F75004E546E /* model controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3411C0BF233E5F6D004E546E /* ShoppingController.swift */,
+			);
+			path = "model controllers";
+			sourceTree = "<group>";
+		};
+		3411C0C6233E5FD4004E546E /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3411C0A6233E5DD9004E546E /* Main.storyboard */,
+			);
+			path = storyboards;
+			sourceTree = "<group>";
+		};
+		3411C0C7233E6001004E546E /* models */ = {
+			isa = PBXGroup;
+			children = (
+				3411C0A9233E5DD9004E546E /* ShoppingList.xcdatamodeld */,
+				3411C0C4233E5FC4004E546E /* Shopping+Convenience.swift */,
+				3411C0C2233E5F9D004E546E /* CoreDataStack.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,10 +209,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3411C0A5233E5DD9004E546E /* ViewController.swift in Sources */,
+				3411C0C3233E5F9D004E546E /* CoreDataStack.swift in Sources */,
 				3411C0AB233E5DD9004E546E /* ShoppingList.xcdatamodeld in Sources */,
+				3411C0B9233E5F06004E546E /* ShoppingTableViewCell.swift in Sources */,
 				3411C0A1233E5DD9004E546E /* AppDelegate.swift in Sources */,
+				3411C0BB233E5F26004E546E /* ShoppingTableViewController.swift in Sources */,
+				3411C0C5233E5FC4004E546E /* Shopping+Convenience.swift in Sources */,
 				3411C0A3233E5DD9004E546E /* SceneDelegate.swift in Sources */,
+				3411C0C0233E5F6D004E546E /* ShoppingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
