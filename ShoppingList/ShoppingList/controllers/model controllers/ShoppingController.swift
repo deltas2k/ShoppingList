@@ -17,7 +17,7 @@ class ShoppingController {
         let request: NSFetchRequest<Shopping> = Shopping.fetchRequest()
         let isCompleteSort = NSSortDescriptor(key: "isComplete", ascending: false)
         request.sortDescriptors = [isCompleteSort]
-        fetchResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataStack.context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataStack.context, sectionNameKeyPath: "isComplete", cacheName: nil)
         do {
             try fetchResultsController.performFetch()
         } catch {
@@ -28,16 +28,16 @@ class ShoppingController {
     //crud
     //create
     func create(name: String, isComplete: Bool) {
-        let newItem = Shopping(name: name, isComplete: isComplete)
+        _ = Shopping(name: name, isComplete: isComplete)
         saveToPersistentStorage()
     }
 
     //update
-    func update(shopping: Shopping, name: String, isComplete: Bool) {
-        shopping.name = name
-        shopping.isComplete = isComplete
-        saveToPersistentStorage()
-    }
+//    func update(shopping: Shopping, name: String, isComplete: Bool) {
+//        shopping.name = name
+//        shopping.isComplete = isComplete
+//        saveToPersistentStorage()
+//    }
     
     //delete
     func delete(shopping: Shopping) {

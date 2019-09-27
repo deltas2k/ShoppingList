@@ -16,9 +16,6 @@ class ShoppingTableViewController: UITableViewController, ShoppingTableViewCellD
         ShoppingController.shared.toggle(shopping: shopping)
     }
     
-
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,30 +47,38 @@ class ShoppingTableViewController: UITableViewController, ShoppingTableViewCellD
     
     
     // MARK: - Table view data source
-
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let sectionNumber = Int(ShoppingController.shared.fetchResultsController.sections?[section].name ?? "0")
+        
+        if sectionNumber == 1 {
+            return "Completed"
+        } else {
+            return "Incomplete"
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return ShoppingController.shared.fetchResultsController.sections?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return ShoppingController.shared.fetchResultsController.sections?[section].numberOfObjects ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingCell", for: indexPath) as? ShoppingTableViewCell else { return UITableViewCell()}
+        let shopping = ShoppingController.shared.fetchResultsController.object(at: indexPath)
+        cell.delegate = self
+        cell.updateViews(shopping: shopping)
         return cell
     }
 
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            let shopping = ShoppingController.shared.fetchResultsController.object(at: indexPath)
+            ShoppingController.shared.delete(shopping: shopping)
+
         }    
     }
 

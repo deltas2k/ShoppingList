@@ -16,17 +16,21 @@ class ShoppingTableViewCell: UITableViewCell {
     var delegate: ShoppingTableViewCellDelegate?
     
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var completeButton: UIButton!
     
     
-    
-    @IBAction func isCompleteButtonTapped(_ sender: Any) {
+    @IBAction func isCompleteButtonTapped(_ sender: UIButton) {
         delegate?.buttonTapped(self)
     }
     
     func updateViews(shopping: Shopping) {
         nameLabel.text = shopping.name
+        updateButton(shopping.isComplete)
+//        if shopping.isComplete {
+//            completeButton.setImage(UIImage(named: "complete"), for: .normal)
+//        } else {
+//            completeButton.setImage(UIImage(named: "incomplete"), for: .normal)
+//        }
     }
     
     func updateButton(_ isComplete: Bool) {
